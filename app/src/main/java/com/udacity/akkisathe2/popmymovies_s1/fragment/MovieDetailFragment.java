@@ -7,6 +7,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -67,7 +69,7 @@ public class MovieDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        setHasOptionsMenu(false);
+        setHasOptionsMenu(true);
         mContext = getContext();
         view = inflater.inflate(R.layout.fragment_movie_detail, container, false);
         title = (TextView) view.findViewById(R.id.txt_movie_title);
@@ -85,6 +87,18 @@ public class MovieDetailFragment extends Fragment {
         FetchMovieData data=new FetchMovieData();
         data.execute(movieId);
         return view;
+    }
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        //setHasOptionsMenu(false);
     }
 
     public class FetchMovieData extends AsyncTask<String,Void,String[]>

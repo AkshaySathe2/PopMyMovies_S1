@@ -77,7 +77,7 @@ public class MovieActivityFragment extends Fragment {
                     if (firstVisibleItem + visibleItemCount >= totalItemCount && totalItemCount != 0 && totalItemCount != visibleItemCount) {
                         // End has been reached
                         visibleItemNumber=firstVisibleItem;
-                        Toast.makeText(getContext(), "End reached", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getContext(), "End reached", Toast.LENGTH_SHORT).show();
                         task = new FetchMovieData();
                         task.execute(String.valueOf(page++));
                     }
