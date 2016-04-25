@@ -23,12 +23,12 @@ public class UrlBuilder {
 
     public static String sortByPopular="popular";
     public static String sortByTopRated="top_rated";
-    public static String api_key="ffb27d728b00f6331cc5ea05f10af28d";
+    public static String api_key="<<YOUR_API_KEY>>";
 
     public static String buildMovieListUrl(String sortBy, String page)
     {
-        //http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=ffb27d728b00f6331cc5ea05f10af28d
-        ///http://api.themoviedb.org/3/discover/movie/popular?api_key=ffb27d728b00f6331cc5ea05f10af28d or /movie/top_rated
+        //http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=<<YOUR_API_KEY>>
+        ///http://api.themoviedb.org/3/discover/movie/popular?api_key=<<YOUR_API_KEY>> or /movie/top_rated
             Uri.Builder builder = new Uri.Builder();
             builder.scheme("https")
                     .authority(baseUrl)
@@ -42,7 +42,7 @@ public class UrlBuilder {
 
     public static String buildMovieDetailUrl(String movieId)
     {
-        //https://api.themoviedb.org/3/movie/209112?api_key=ffb27d728b00f6331cc5ea05f10af28d
+        //https://api.themoviedb.org/3/movie/209112?api_key=<<YOUR_API_KEY>>
         Uri.Builder builder = new Uri.Builder();
         builder.scheme("https")
                 .authority(baseUrl)
