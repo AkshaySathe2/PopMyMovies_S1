@@ -67,7 +67,7 @@ public class MovieActivityFragment extends Fragment {
                 //MovieDetailFragment fragment=MovieDetailFragment.newInstance(movieList.get(position));
                 MovieDetailFragment fragment = MovieDetailFragment.newInstance(movieList.get(position).getId());
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.add(R.id.movieActivity, fragment).addToBackStack("MovieActivityFragment").commit();
+                fragmentTransaction.replace(R.id.movieActivity, fragment).addToBackStack("MovieActivityFragment").commit();
             }
         });
         listMovie.setOnScrollListener(new AbsListView.OnScrollListener() {

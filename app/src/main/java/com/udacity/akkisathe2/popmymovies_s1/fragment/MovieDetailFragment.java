@@ -69,7 +69,7 @@ public class MovieDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        setHasOptionsMenu(true);
+        setHasOptionsMenu(false);
         mContext = getContext();
         view = inflater.inflate(R.layout.fragment_movie_detail, container, false);
         title = (TextView) view.findViewById(R.id.txt_movie_title);
@@ -91,15 +91,11 @@ public class MovieDetailFragment extends Fragment {
 
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-
-    }
-
-    @Override
     public void onResume() {
         super.onResume();
         //setHasOptionsMenu(false);
     }
+
 
     public class FetchMovieData extends AsyncTask<String,Void,String[]>
     {
